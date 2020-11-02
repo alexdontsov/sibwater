@@ -12,6 +12,9 @@ use Symfony\Component\Console\Output\OutputInterface;
  */
 class SentinelApiHub extends Command
 {
+    /**
+     * @var string
+     */
     protected static $defaultName = 'sentinel2:download';
 
     /**
