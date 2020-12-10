@@ -2,7 +2,7 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Region;
+use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
@@ -15,14 +15,14 @@ use Symfony\Component\Routing\Annotation\Route;
  * Class RegionController
  * @package App\Controller\Admin
  */
-class RegionController extends AbstractCrudController
+class UserController extends AbstractCrudController
 {
     /**
      * @return string
      */
     public static function getEntityFqcn(): string
     {
-        return Region::class;
+        return User::class;
     }
 
     /**
