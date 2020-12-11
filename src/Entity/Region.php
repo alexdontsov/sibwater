@@ -4,9 +4,18 @@ namespace App\Entity;
 
 use App\Repository\RegionRepository;
 use Doctrine\ORM\Mapping as ORM;
+use ApiPlatform\Core\Annotation\ApiResource;
+use Symfony\Component\Serializer\Annotation\Groups;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * @ORM\Entity(repositoryClass=RegionRepository::class)
+ * @UniqueEntity("slug")
+ * @ApiResource(
+ *   collectionOperations={"get"={"normalization_context"={"groups"="conference:list"}}},
+ *   itemOperations={"get"={"normalization_context"={"groups"="conference:item"}}},
+ *   order={"id"="DESC"},
+ * )
  */
 class Region
 {
