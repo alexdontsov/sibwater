@@ -32,7 +32,8 @@
         "symfony/serializer": "5.1.*",
         "symfony/twig-bundle": "^5.1",
         "symfony/validator": "5.1.*",
-        "symfony/yaml": "5.1.*"
+        "symfony/yaml": "5.1.*",
+        "alexdontsov/hello-world": "1.0.2"
     },
     "require-dev": {
         "phpstan/phpstan": "^0.12.52",
@@ -41,6 +42,7 @@
         "symfony/stopwatch": "^5.1",
         "symfony/var-dumper": "^5.1",
         "symfony/web-profiler-bundle": "^5.1"
+
     },
     "config": {
         "optimize-autoloader": true,

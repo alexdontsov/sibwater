@@ -1,4 +1,7 @@
 {
+    "alexdontsov/hello-world": {
+        "version": "1.0.2"
+    },
     "api-platform/api-pack": {
         "version": "v1.3.0"
     },
