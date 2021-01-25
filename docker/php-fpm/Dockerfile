@@ -3,6 +3,9 @@ FROM php:7.4-fpm
 RUN apt-get update && apt-get install -y curl zlib1g-dev libzip-dev libpng-dev libcurl4-openssl-dev libonig-dev \
     autoconf g++ make zip unzip git libpq-dev
 
+RUN pecl install xdebug \
+    && docker-php-ext-enable xdebug
+
 RUN pecl install redis \
     && docker-php-ext-enable redis \
     && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \

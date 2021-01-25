@@ -17,9 +17,11 @@ services:
     build:
       context: .
       dockerfile: docker/php-fpm/Dockerfile
+    environment:
+      PHP_ENABLE_XDEBUG: 1
     volumes:
-      - ./src:/var/www/html
-      - ./php-fpm/conf/php.ini:/usr/local/etc/php/conf.d/php.ini
+      - ./application:/var/www/html
+      - ./docker/php-fpm/conf/php.ini:/usr/local/etc/php/conf.d/php.ini
     ports:
       - "9000:9000"
   database:
