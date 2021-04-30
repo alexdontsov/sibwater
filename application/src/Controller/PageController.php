@@ -10,6 +10,7 @@ use Twig\Environment;
 use Twig\Error\LoaderError;
 use Twig\Error\RuntimeError;
 use Twig\Error\SyntaxError;
+use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Class PageController
