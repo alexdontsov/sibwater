@@ -13,8 +13,6 @@ use Symfony\Component\HttpClient\HttpClient;
  */
 class SentinelApiHub extends Command
 {
-
-
     /**
      * @var string
      */
@@ -32,7 +30,6 @@ class SentinelApiHub extends Command
 
     private function getData()
     {
-
         $client = HttpClient::create();
         $response = $client->request(
             'GET',
