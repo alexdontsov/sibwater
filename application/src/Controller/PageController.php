@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Repository\RegionRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -41,16 +40,13 @@ class PageController extends AbstractController
 
     /**
      * @Route("/", name="homepage")
-     * @param RegionRepository $conferenceRepository
      * @return Response
      * @throws LoaderError
      * @throws RuntimeError
      * @throws SyntaxError
      */
-    public function index(RegionRepository $conferenceRepository)
+    public function index()
     {
-        return new Response($this->twig->render('pages/index.html.twig', [
-            'conferences' => $conferenceRepository->findAll(),
-        ]));
+        return new Response($this->twig->render('pages/index.html.twig', []));
     }
 }

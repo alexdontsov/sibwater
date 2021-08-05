@@ -6,6 +6,7 @@ services:
       dockerfile: docker/nginx/Dockerfile
     volumes:
       - ./logs:/var/log/nginx
+      - ./mapserver:/mapserver
     ports:
       - "8080:80"
     environment:
@@ -34,8 +35,7 @@ services:
   redis:
     image: redis:5-alpine
     ports: [6379]
-#      - "6379:6379"
-#
+
   rabbitmq:
     image: rabbitmq:3.7-management
     ports: [5672, 15672]
