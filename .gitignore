@@ -1,2 +1,7 @@
 .idea/
 logs/
+datadir/
+grib_cache/
+gwc/
+netcfd/
+
