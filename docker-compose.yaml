@@ -6,7 +6,6 @@ services:
       dockerfile: docker/nginx/Dockerfile
     volumes:
       - ./logs:/var/log/nginx
-      - ./mapserver:/mapserver
     ports:
       - "8080:80"
     environment:

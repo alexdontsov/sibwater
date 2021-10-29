@@ -45,7 +45,19 @@ class PageController extends AbstractController
      * @throws RuntimeError
      * @throws SyntaxError
      */
-    public function index()
+    public function index(): Response
+    {
+        return new Response($this->twig->render('pages/index.html.twig', []));
+    }
+
+    /**
+     * @Route("about", name="about")
+     * @return Response
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
+     */
+    public function about(): Response
     {
         return new Response($this->twig->render('pages/index.html.twig', []));
     }
