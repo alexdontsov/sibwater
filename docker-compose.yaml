@@ -6,8 +6,9 @@ services:
       dockerfile: docker/nginx/Dockerfile
     volumes:
       - ./logs:/var/log/nginx
+      - ./application:/var/www/html
     ports:
-      - "8080:80"
+      - "80:80"
     environment:
       - NGINX_HOST=hw2.local
       - NGINX_PORT=80
@@ -43,9 +44,9 @@ services:
     ports:
       - 8980:8080
     volumes:
-      - ./logs:${GEOSERVER_LOG_DIR}
-      - ./datadir:${GEOSERVER_DATA_DIR}
-      - ./gwc_config:${GEOWEBCACHE_CONFIG_DIR}
-      - ./gwc:${GEOWEBCACHE_CACHE_DIR}
-      - ./netcfd:${NETCDF_DATA_DIR}
-      - ./grib_cache:${GRIB_CACHE_DIR}
+      - ./geoserver/logs:${GEOSERVER_LOG_DIR}
+      - ./geoserver/datadir:${GEOSERVER_DATA_DIR}
+      - ./geoserver/gwc_config:${GEOWEBCACHE_CONFIG_DIR}
+      - ./geoserver/gwc:${GEOWEBCACHE_CACHE_DIR}
+      - ./geoserver/netcfd:${NETCDF_DATA_DIR}
+      - ./geoserver/grib_cache:${GRIB_CACHE_DIR}

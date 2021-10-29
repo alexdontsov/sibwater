@@ -61,4 +61,16 @@ class PageController extends AbstractController
     {
         return new Response($this->twig->render('pages/index.html.twig', []));
     }
+
+    /**
+     * @Route("/map", name="map")
+     * @return Response
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
+     */
+    public function map(): Response
+    {
+        return new Response($this->twig->render('pages/index.html.twig', []));
+    }
 }
