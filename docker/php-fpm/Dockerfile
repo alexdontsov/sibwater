@@ -17,7 +17,7 @@ ENV COMPOSER_ALLOW_SUPERUSER 1
 
 #install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
+RUN composer install
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 

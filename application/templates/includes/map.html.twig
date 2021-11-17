@@ -12,15 +12,63 @@
 
 <script>
 
-	var mymap = L.map('map').setView([51.505, -0.09], 13);
-
-	L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+	let openStreet = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
 		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
 			'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 		id: 'mapbox/streets-v11',
 		tileSize: 512,
 		zoomOffset: -1
-	}).addTo(mymap);
+	});
+
+	var esri = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+		maxZoom: 18,
+		name: "Esri.WorldImagery",
+
+	});
+
+	// source: new ol.source.TileWMS({
+	// 	url: 'http://localhost:8980/geoserver/sibwater/wms',
+	// 	params: {'FORMAT': format,
+	// 		'VERSION': '1.1.1',
+	// 		tiled: true,
+	// 		"STYLES": '',
+	// 		"LAYERS": 'sibwater:sentinel-2-test1',
+	// 		"exceptions": 'application/vnd.ogc.se_inimage',
+	// 		tilesOrigin: 86.999468241 + "," + 69.299020638 2018/07/21 - 2017-08-24 - 23-07-2019 -
+	// 	}
+	// })
+
+	var wmsLayer = L.tileLayer.wms('http://localhost:8980/geoserver/sibwater/wms', {
+		layers: 'sibwater:sentinel-2-test1'
+	});
+
+    var mymap = L.map('map', {
+		center: [69.3535, 88.2027],
+            zoom: 13,
+        layers: [openStreet, esri]
+	});
+
+	var baseMaps = {
+		"Open street map": openStreet,
+		"ERSI": esri,
+        };
+
+
+
+	var cities = L.layerGroup();
+	L.marker([66.769, 68.94805]).bindPopup('H - 0,3м <br> T - 16,6&#8451;<br> Цвет - 18').addTo(cities);
+	L.marker([66.782, 68.960277]).bindPopup('H - 0,3м <br> T - 16,6&#8451;<br> Цвет - 18').addTo(cities);
+	L.marker([66.7802778, 68.95972222]).bindPopup('H - 0 <br> T - 16,7&#8451;<br> Цвет - 20<br> Хл - 400').addTo(cities);
+	L.marker([66.7775278, 68.96]).bindPopup('H - 0 <br> T - 16,7&#8451;<br> Цвет - 20<br> Хл - 400').addTo(cities);
+
+	var overlayMaps = {
+		"Экспедиционные данные": cities,
+		"Sentinel-2, 23.07.2019": wmsLayer
+	};
+
+	L.control.layers(baseMaps, overlayMaps).addTo(mymap);
+
+
 
 </script>
