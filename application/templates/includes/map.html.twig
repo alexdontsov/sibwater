@@ -39,8 +39,12 @@
 	// 	}
 	// })
 
-	var wmsLayer = L.tileLayer.wms('http://localhost:8980/geoserver/sibwater/wms', {
-		layers: 'sibwater:sentinel-2-test1'
+	// var wmsLayer = L.tileLayer.wms('http://localhost:8980/geoserver/sibwater/wms', {
+	// 	layers: 'sibwater:sentinel-2-test1'
+	// });
+
+	var wmsLayer = L.tileLayer.wms('http://arcticgis.iwep.ru:8980/geoserver/public/wms', {
+		layers: 'public:conc_tsm'
 	});
 
     var mymap = L.map('map', {
@@ -64,7 +68,8 @@
 
 	var overlayMaps = {
 		"Экспедиционные данные": cities,
-		"Sentinel-2, 23.07.2019": wmsLayer
+		// "Sentinel-2, 23.07.2019": wmsLayer
+		"Sentinel-2, COnc tsm": wmsLayer
 	};
 
 	L.control.layers(baseMaps, overlayMaps).addTo(mymap);
