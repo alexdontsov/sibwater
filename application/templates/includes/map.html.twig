@@ -4,6 +4,10 @@
         <div class="row">
             <div class="service-heading col-12 col-lg-12 text-start float-end light-300">
                 <div id="map" style="width: 100%; height: 600px;margin:0 auto;"></div>
+{#                <div id="custom-map-controls"></div>#}
+{#                <div id="layercontrol">#}
+{#                    <label><input type="checkbox" data-layer="cities">Cities</label>#}
+{#                </div>#}
             </div>
         </div>
     </div>
@@ -44,12 +48,15 @@
 	// });
 
 	var wmsLayer = L.tileLayer.wms('http://arcticgis.iwep.ru:8980/geoserver/public/wms', {
-		layers: 'public:conc_tsm'
+		layers: 'public:tt',
+		format: 'image/png',
+		zIndex: 2,
+		transparent: true
 	});
 
     var mymap = L.map('map', {
-		center: [69.3535, 88.2027],
-            zoom: 13,
+		center: [71.7661, 75.0251],
+            zoom: 8,
         layers: [openStreet, esri]
 	});
 
@@ -73,6 +80,32 @@
 	};
 
 	L.control.layers(baseMaps, overlayMaps).addTo(mymap);
+
+
+
+	// $(document).ready(function () {
+    //
+	// 	var newParent = document.getElementById('custom-map-controls');
+	// 	var oldParent = document.getElementsByClassName("leaflet-top leaflet-right")
+    //
+	// 	while (oldParent[0].childNodes.length > 0) {
+	// 		newParent.appendChild(oldParent[0].childNodes[0]);
+	// 	}
+	// });
+
+	// use jQuery to listen for checkbox change event
+	$('div#layercontrol input[type="checkbox"]').on('change', function() {
+		var checkbox = $(this);
+		var layer = checkbox.data().layer;
+
+		// toggle the layer
+		if (checkbox.is('checked')) {
+			mymap.addLayer(layer);
+		} else {
+			mymap.removeLayer(layer);
+		}
+
+	})
 
 
 
