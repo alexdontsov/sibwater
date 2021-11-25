@@ -37,7 +37,6 @@ class PageController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-
     /**
      * @Route("/", name="homepage")
      * @return Response
@@ -59,8 +58,32 @@ class PageController extends AbstractController
      */
     public function about(): Response
     {
-        return new Response($this->twig->render('pages/index.html.twig', []));
+        return new Response($this->twig->render('pages/about.html.twig', []));
     }
+
+	/**
+	 * @Route("data", name="data")
+	 * @return Response
+	 * @throws LoaderError
+	 * @throws RuntimeError
+	 * @throws SyntaxError
+	 */
+	public function data(): Response
+	{
+		return new Response($this->twig->render('pages/data.html.twig', []));
+	}
+
+	/**
+	 * @Route("contact", name="contact")
+	 * @return Response
+	 * @throws LoaderError
+	 * @throws RuntimeError
+	 * @throws SyntaxError
+	 */
+	public function contact(): Response
+	{
+		return new Response($this->twig->render('pages/contacts.html.twig', []));
+	}
 
     /**
      * @Route("/map", name="map")

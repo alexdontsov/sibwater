@@ -54,6 +54,14 @@
 		transparent: true
 	});
 
+	var iot_atop = L.tileLayer.wms('http://arcticgis.iwep.ru:8980/geoserver/public/wms', {
+		layers: 'public:iot_atop',
+		format: 'image/png',
+		zIndex: 2,
+		transparent: true
+	});
+
+
     var mymap = L.map('map', {
 		center: [71.7661, 75.0251],
             zoom: 8,
@@ -75,8 +83,8 @@
 
 	var overlayMaps = {
 		"Экспедиционные данные": cities,
-		// "Sentinel-2, 23.07.2019": wmsLayer
-		"Sentinel-2, COnc tsm": wmsLayer
+		"Sentinel-2, Conc TSM": wmsLayer,
+		"Sentinel-2, IOT ATOP (21.08.2020)": iot_atop
 	};
 
 	L.control.layers(baseMaps, overlayMaps).addTo(mymap);
