@@ -81,6 +81,13 @@
 	L.marker([66.7802778, 68.95972222]).bindPopup('H - 0 <br> T - 16,7&#8451;<br> Цвет - 20<br> Хл - 400').addTo(cities);
 	L.marker([66.7775278, 68.96]).bindPopup('H - 0 <br> T - 16,7&#8451;<br> Цвет - 20<br> Хл - 400').addTo(cities);
 
+	L.marker([66.7775, 68.96002]).bindPopup('H - 0 <br> T - 16,8&#8451;<br> Цвет - 19<br> Хл - 250').addTo(cities);
+
+
+	L.marker([66.7757, 68.9567]).bindPopup('H - 0 <br> T - 16,7&#8451;<br> Цвет - 19<br> Хл - 250').addTo(cities);
+
+	L.marker([66.77194, 68.95461]).bindPopup('H - 0 <br> T - 16,7&#8451;<br> Цвет - 19<br> Хл - 250').addTo(cities);
+
 	var overlayMaps = {
 		"Экспедиционные данные": cities,
 		"Sentinel-2, Conc TSM": wmsLayer,
@@ -102,19 +109,48 @@
 	// });
 
 	// use jQuery to listen for checkbox change event
-	$('div#layercontrol input[type="checkbox"]').on('change', function() {
-		var checkbox = $(this);
-		var layer = checkbox.data().layer;
+	// $('div#layercontrol input[type="checkbox"]').on('change', function() {
+	// 	var checkbox = $(this);
+	// 	var layer = checkbox.data().layer;
+    //
+	// 	// toggle the layer
+	// 	if (checkbox.is('checked')) {
+	// 		mymap.addLayer(layer);
+	// 	} else {
+	// 		mymap.removeLayer(layer);
+	// 	}
+    //
+	// })
+	var populationLegend = L.control({position: 'bottomright'});
+	var populationChangeLegend = L.control({position: 'bottomright'});
 
-		// toggle the layer
-		if (checkbox.is('checked')) {
-			mymap.addLayer(layer);
-		} else {
-			mymap.removeLayer(layer);
+	populationLegend.onAdd = function (mymap) {
+		var div = L.DomUtil.create('div', 'info legend');
+		div.innerHTML +=
+			'<img src="legend.png" alt="legend" width="134" height="147">';
+		return div;
+	};
+
+	populationChangeLegend.onAdd = function (mymap) {
+		var div = L.DomUtil.create('div', 'info legend');
+		div.innerHTML +=
+			// '<img src="change_legend.png" alt="legend" width="134" height="147">';
+			'<h1>xcxcxcxc</h1>';
+		return div;
+	};
+
+	// Add this one (only) for now, as the Population layer is on by default
+	populationLegend.addTo(mymap);
+
+	mymap.on('overlayadd', function (eventLayer) {
+		// Switch to the Population legend...
+		if (eventLayer.name === 'wmsLayer') {
+			this.removeControl(populationChangeLegend);
+			populationLegend.addTo(this);
+		} else { // Or switch to the Population Change legend...
+			this.removeControl(populationLegend);
+			populationChangeLegend.addTo(this);
 		}
-
-	})
-
-
+	});
 
 </script>
