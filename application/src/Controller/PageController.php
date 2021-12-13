@@ -74,6 +74,18 @@ class PageController extends AbstractController
 	}
 
 	/**
+	 * @Route("tacsonametrosheskiy-sostav", name="data-tacs")
+	 * @return Response
+	 * @throws LoaderError
+	 * @throws RuntimeError
+	 * @throws SyntaxError
+	 */
+	public function dataTacs(): Response
+	{
+		return new Response($this->twig->render('pages/data-1.html.twig', []));
+	}
+
+	/**
 	 * @Route("contact", name="contact")
 	 * @return Response
 	 * @throws LoaderError

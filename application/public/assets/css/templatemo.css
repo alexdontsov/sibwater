@@ -20,7 +20,7 @@ Table of contents
 html {font-family: 'Open Sans', sans-serif;}
 /* Typography */
 p, a {font-weight: 400;}
-.h2 {font-size: 40px;}
+/*.h2 {font-size: 40px;}*/
 .h3 {font-size: 28px;}
 .light-300 {
   font-family: 'Open Sans', sans-serif !important;
