@@ -1,0 +1,476 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <section class="service-wrapper py-3">
+        <div class="container-fluid pb-3">
+            <div class="row">
+                <div class="service-heading col-12 col-lg-12 text-start float-end light-300">
+                    <div class="container">
+                        <center>
+                            <h3>Численность, биомасса и число видов зоопланктона Нижней Оби в марте-апреле 2021 г.</h3>
+                        </center>
+                        <center>
+                            <table width="100%" cellspacing="0" cellpadding="7">
+                                <tbody>
+                                <tr>
+                                    <td style="border: 1px solid #000000; padding: 0cm 0.19cm;" rowspan="2" valign="bottom" width="40" height="26">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="color: #000000;">№ <span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><strong>точки по реестру</strong></span></span></span></span></p>
+                                    </td>
+                                    <td style="border: 1px solid #000000; padding: 0cm 0.19cm;" rowspan="2" valign="bottom" width="76">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;"><strong>Створ</strong></span></span></span></span></p>
+                                    </td>
+                                    <td style="border: 1px solid #000000; padding: 0cm 0.19cm;" rowspan="2" width="23">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="left"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">Общая численность экз./м</span></span><sup><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">3</span></span></sup></span></span></p>
+                                    </td>
+                                    <td style="border: 1px solid #000000; padding: 0cm 0.19cm;" rowspan="2" width="26">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="left"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">Общая биомасса, мг/м</span></span><sup><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">3</span></span></sup></span></span></p>
+                                    </td>
+                                    <td style="border: 1px solid #000000; padding: 0cm 0.19cm;" rowspan="2" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="left"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">общее число видов</span></span></span></span></p>
+                                    </td>
+                                    <td style="border: 1px solid #000000; padding: 0cm 0.19cm;" colspan="3" valign="bottom" width="88">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">коловратки</span></span></span></span></p>
+                                    </td>
+                                    <td style="border: 1px solid #000000; padding: 0cm 0.19cm;" colspan="3" valign="bottom" width="89">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">ветвистоусые рачки</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" colspan="3" width="88">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">веслоногие рачки (циклопоиды)</span></span></span></span></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="left"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">численность</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="26">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="left"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">биомасса</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="16">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="left"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">число видов</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="left"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">численность</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="27">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="left"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">биомасса</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="17">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="left"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">число видов</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="left"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">численность</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="27">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="left"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">биомасса</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: 1px solid #000000; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="15">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="left"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">число видов</span></span></span></span></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm 0.19cm;" width="40" height="14">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">ЗП-7</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="76">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="left"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">Казым-Мыс</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="23">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">70</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="26">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,41</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">4</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">40</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="26">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,04</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="16">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">3</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="27">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,00</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="17">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">0</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">30</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="27">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,37</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="15">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">1</span></span></span></span></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm 0.19cm;" width="40" height="14">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">ЗП-1,5</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="76">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="left"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">Казым-Мыс</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="23">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">30</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="26">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,04</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">3</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">30</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="26">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,04</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="16">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">3</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="27">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,00</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="17">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">0</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="27">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,00</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="15">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">0</span></span></span></span></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm 0.19cm;" width="40" height="7">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">ЗП-13</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="76">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="left"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">Казым-Мыс</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="23">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">50</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="26">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,39</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">3</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">20</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="26">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,02</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="16">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">2</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="27">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,00</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="17">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">0</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">30</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="27">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,37</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="15">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">1</span></span></span></span></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm 0.19cm;" width="40" height="11">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">ЗП-1</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="76">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="left"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">Азовы</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="23">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">120</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="26">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">1,80</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">9</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">60</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="26">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,06</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="16">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">4</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">20</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="27">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,04</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="17">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">2</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">40</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="27">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">1,70</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="15">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">3</span></span></span></span></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm 0.19cm;" width="40" height="6">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">ЗП-5</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="76">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="left"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">Азовы</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="23">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">50</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="26">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,04</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">4</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">40</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="26">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,01</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="16">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">3</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="27">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,00</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="17">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">0</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">10</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="27">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,03</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="15">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">1</span></span></span></span></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm 0.19cm;" width="40" height="6">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">ЗП-7</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="76">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="left"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">Азовы</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="23">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">140</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="26">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,87</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">5</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">50</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="26">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,06</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="16">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">3</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">10</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="27">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,01</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="17">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">1</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">80</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="27">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,80</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="15">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">1</span></span></span></span></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm 0.19cm;" width="40" height="6">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">ЗП-1</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="76">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="left"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">Салемал</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="23">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">30</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="26">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,22</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">2</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">10</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="26">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,02</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="16">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">1</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="27">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,00</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="17">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">20</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="27">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,20</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="15">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">1</span></span></span></span></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm 0.19cm;" width="40" height="6">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">ЗП-7</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="76">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="left"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">Салемал</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="23">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">50</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="26">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,10</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">4</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">30</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="26">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,04</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="16">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">3</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="27">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,00</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="17">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">20</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="27">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">0,06</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="15">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">1</span></span></span></span></p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: 1px solid #000000; border-right: 1px solid #000000; padding: 0cm 0.19cm;" width="40" height="5">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;"><span style="font-size: small;">ЗП-13</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="76">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="left"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="color: #000000;"><span style="font-family: Times New Roman, serif;">Салемал</span></span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="23">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;">60</span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="26">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;">0,24</span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;">5</span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;">40</span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="26">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;">0,04</span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="16">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;">4</span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;">0</span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="27">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;">0,00</span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="17">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;">0</span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="18">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;">20</span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="27">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;">0,20</span></span></span></p>
+                                    </td>
+                                    <td style="border-top: none; border-bottom: 1px solid #000000; border-left: none; border-right: 1px solid #000000; padding: 0cm 0.19cm 0cm 0cm;" width="15">
+                                        <p class="western" style="orphans: 0; widows: 0;" align="center"><span style="font-family: Calibri, serif;"><span style="font-size: small;"><span style="font-family: Times New Roman, serif;">1</span></span></span></p>
+                                    </td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </center>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+{% endblock %}
