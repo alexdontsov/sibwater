@@ -133,6 +133,59 @@ class PageController extends AbstractController
 		return new Response($this->twig->render('pages/data-5.html.twig', []));
 	}
 
+
+	/**
+	 * @Route("sentinel-2-2", name="sentinel-2-2")
+	 * @return Response
+	 * @throws LoaderError
+	 * @throws RuntimeError
+	 * @throws SyntaxError
+	 */
+	public function dataTable5(): Response
+	{
+		return new Response($this->twig->render('pages/data-6.html.twig', []));
+	}
+
+	/**
+	 * @Route("sentinel-2-3", name="sentinel-2-3")
+	 * @return Response
+	 * @throws LoaderError
+	 * @throws RuntimeError
+	 * @throws SyntaxError
+	 */
+	public function dataTable6(): Response
+	{
+		return new Response($this->twig->render('pages/data-7.html.twig', []));
+	}
+
+
+	/**
+	 * @Route("sentinel-2-4", name="sentinel-2-4")
+	 * @return Response
+	 * @throws LoaderError
+	 * @throws RuntimeError
+	 * @throws SyntaxError
+	 */
+	public function dataTable7(): Response
+	{
+		return new Response($this->twig->render('pages/data-8.html.twig', []));
+	}
+
+
+
+
+	/**
+	 * @Route("sentinel-2-5", name="sentinel-2-5")
+	 * @return Response
+	 * @throws LoaderError
+	 * @throws RuntimeError
+	 * @throws SyntaxError
+	 */
+	public function dataTable8(): Response
+	{
+		return new Response($this->twig->render('pages/data-9.html.twig', []));
+	}
+
 	/**
 	 * @Route("contact", name="contact")
 	 * @return Response
