@@ -2,6 +2,7 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Meterage;
 use App\Entity\Region;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -34,14 +35,20 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         return [
-            MenuItem::linktoDashboard('Dashboard', 'fa fa-home'),
+            MenuItem::linktoDashboard('Главная', 'fa fa-home'),
 
-            MenuItem::section('Content'),
+            MenuItem::section('Контент'),
             MenuItem::linkToCrud('Conferences', 'fa fa-tags', Region::class)
                 ->setQueryParameter('sortField', 'createdAt')
                 ->setQueryParameter('sortDirection', 'DESC'),
 
-            MenuItem::linkToCrud('Comments', 'fa fa-tags', User::class)
+            MenuItem::linkToCrud('Наземные измерения', 'fa fa-tags', Meterage::class)
+                ->setQueryParameter('sortField', 'createdAt')
+                ->setQueryParameter('sortDirection', 'DESC'),
+
+            MenuItem::section('Пользователи'),
+
+            MenuItem::linkToCrud('Пользователи', 'fa fa-tags', User::class)
                 ->setQueryParameter('sortField', 'createdAt')
                 ->setQueryParameter('sortDirection', 'DESC'),
         ];

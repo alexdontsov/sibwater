@@ -21,8 +21,12 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /var/www/html
+COPY ./application /var/www/html
+
+
+
 RUN composer install
+WORKDIR /var/www/html
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
 CMD ["php-fpm"]
