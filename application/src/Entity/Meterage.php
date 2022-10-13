@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity(repositoryClass=MeterageRepository::class)
  */
-class Meterage
+    class Meterage
 {
     /**
      * @ORM\Id
@@ -38,9 +38,24 @@ class Meterage
     private $value;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\ManyToOne(targetEntity=Parameter::class)
      */
-    private $param;
+    private $parameter;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $station;
+
+    /**
+     * @ORM\Column(type="date")
+     */
+    private $date;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Location::class)
+     */
+    private $location;
 
     public function getId(): ?int
     {
@@ -94,17 +109,56 @@ class Meterage
 
         return $this;
     }
-    /**
-     * @return string|null
-     */
-    public function getParam(): ?string
+
+    public function getParameter(): ?Parameter
     {
-        return $this->param;
+        return $this->parameter;
     }
 
-    public function setParam(string $param): self
+    public function setParameter(?Parameter $parameter): self
     {
-        $this->param = $param;
+        $this->parameter = $parameter;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return (string) $this->getValue();
+    }
+
+    public function getStation(): ?string
+    {
+        return $this->station;
+    }
+
+    public function setStation(?string $station): self
+    {
+        $this->station = $station;
+
+        return $this;
+    }
+
+    public function getDate(): ?\DateTimeInterface
+    {
+        return $this->date;
+    }
+
+    public function setDate(\DateTimeInterface $date): self
+    {
+        $this->date = $date;
+
+        return $this;
+    }
+
+    public function getLocation(): ?Location
+    {
+        return $this->location;
+    }
+
+    public function setLocation(?Location $location): self
+    {
+        $this->location = $location;
 
         return $this;
     }

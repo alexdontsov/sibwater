@@ -19,10 +19,11 @@ final class Version20221006112943 extends AbstractMigration
 
     public function up(Schema $schema) : void
     {
-        $this->addSql("
-insert into public.meterage (lat, long, height, value, param)
-values  (12, 121, 212, 121, '212');
-        ");
+//        $this->addSql("
+//insert into public.meterage
+//(lat, long, height, value, param)
+//values  (12, 121, 212, 121, '212');
+//        ");
 
     }
 

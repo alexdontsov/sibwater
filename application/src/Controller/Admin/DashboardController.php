@@ -3,6 +3,7 @@
 namespace App\Controller\Admin;
 
 use App\Entity\Meterage;
+use App\Entity\Parameter;
 use App\Entity\Region;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
@@ -43,6 +44,10 @@ class DashboardController extends AbstractDashboardController
                 ->setQueryParameter('sortDirection', 'DESC'),
 
             MenuItem::linkToCrud('Наземные измерения', 'fa fa-tags', Meterage::class)
+                ->setQueryParameter('sortField', 'createdAt')
+                ->setQueryParameter('sortDirection', 'DESC'),
+
+            MenuItem::linkToCrud('Параметры', 'fa fa-tags', Parameter::class)
                 ->setQueryParameter('sortField', 'createdAt')
                 ->setQueryParameter('sortDirection', 'DESC'),
 
