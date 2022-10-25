@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <section class="service-wrapper py-3">
+        <div class="container-fluid pb-3">
+            <div class="row">
+                <div class="service-heading col-12 col-lg-12 text-start float-end light-300">
+                    <div class="container">
+                        <div id="myDiv" style="width:600px;height:250px;"></div>
+{#                        https://developer.mozilla.org/en-US/docs/Web/API/Response/json#}
+
+                        <script>
+
+                            $.get('/get-plot-data',
+                                function(response) {
+                                    console.log(response)
+                                    dataX = response['x'];
+                                    dataY = response['y'];
+                                    var trace = {
+                                                    x: dataX,
+                                                    y: dataY,
+                                                    type: "bar"
+                                                };
+
+                                                Plotly.newPlot('myDiv', [trace])
+                                }
+                                );
+
+                        </script>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+{% endblock %}

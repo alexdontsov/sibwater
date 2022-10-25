@@ -13,18 +13,8 @@ class MeterageDto
     private $station;
     private $date;
     private $location;
+    private string $coordinates;
 
-    /**
-     * @param int $id
-     * @param $lat
-     * @param $long
-     * @param $height
-     * @param $value
-     * @param $parameter
-     * @param $station
-     * @param $date
-     * @param $location
-     */
     public function __construct(int $id, $lat, $long, $height, $value, $parameter, $station, $date, $location)
     {
         $this->id        = $id;
@@ -110,8 +100,10 @@ class MeterageDto
         return $this->location;
     }
 
-    private function getСoordinates()
+    public function getCoordinates(): string
     {
-        return $this->lat .', '. $this->long;
+        $this->coordinates = round($this->lat, 4) .', '. round($this->long, 4);
+
+        return $this->coordinates;
     }
 }

@@ -31,4 +31,17 @@ class MeterageService
         
         return new MeterageTableDto($meteragesDtoList, new FooterDto('footer'));
     }
+
+    public function createPlot(): array
+    {
+        $meterages = $this->repository->findAll();
+        $plotData = [];
+        foreach ($meterages as $meterage) {
+            $plotData['x'][] = $meterage->getStation();
+            $plotData['y'][] = $meterage->getValue();
+
+        }
+
+        return $plotData;
+    }
 }

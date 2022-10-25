@@ -47,9 +47,6 @@ class DataController extends AbstractController
     /**
      * @Route("/get-table-data", name="get-data")
      * @return Response
-     * @throws LoaderError
-     * @throws RuntimeError
-     * @throws SyntaxError
      */
     public function table(): Response
     {
@@ -58,5 +55,32 @@ class DataController extends AbstractController
         $jsonContent = $this->serializer->serialize($data, 'json');
 
         return new JsonResponse(json_decode($jsonContent));
+    }
+
+    /**
+     * @Route("/get-plot-data", name="get-plot-data")
+     * @return Response
+     */
+    public function plot(): Response
+    {
+        $data = $this->service->createPlot();
+
+//        $jsonContent = $this->serializer->serialize($data, 'json');
+        $jsonContent = $this->serializer->serialize(
+            $data, 'json');
+
+        return new JsonResponse(json_decode($jsonContent));
+    }
+
+    /**
+     * @Route("/data-plot", name="/plot")
+     * @return Response
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
+     */
+    public function plotView(): Response
+    {
+        return new Response($this->twig->render('plot.html.twig', []));
     }
 }
