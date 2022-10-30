@@ -1,0 +1,32 @@
+<div class="needs-validation container">
+    <div class="form-row row">
+        <div class="col-md-4 mb-3">
+            <label for="validationCustom01">Параметр</label>
+            <select id="filter_parameter" class="form-select">
+                <option value="1">Хл а, мг/м<sup><small>3</small></sup></option>
+                <option value="2">Хл b, мг/м<sup><small>3</small></sup></option>
+                <option value="3">Хл c<sub>1</sub>+c<sub>2</sub>, мг/м<sup>3</sup></option>
+                <option value="4">Каротиноиды, мкг/дм<sup><small>3</small></sup></option>
+                <option value="5">Пигментный индекс<sup><small>3</small></sup></option>
+            </select>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="validationCustom02">Дата</label>
+            <input type="text" class="form-control" id="validationCustom02" placeholder="Last name" value="Otto" required>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="validationCustomUsername">Станция</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                </div>
+                <input type="text" class="form-control" id="validationCustomUsername">
+                <div class="invalid-feedback">
+                    Please choose a username.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" id="filter_button">Фильтр</button>
+</div>

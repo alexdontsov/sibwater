@@ -19,22 +19,19 @@ class MeterageRepository extends ServiceEntityRepository
         parent::__construct($registry, Meterage::class);
     }
 
-    // /**
-    //  * @return Meterage[] Returns an array of Meterage objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    public function findByFilter(
+        $parameter
+    )
     {
         return $this->createQueryBuilder('m')
-            ->andWhere('m.exampleField = :val')
-            ->setParameter('val', $value)
+            ->andWhere('m.parameter = :parameter')
+            ->setParameter('parameter', $parameter)
             ->orderBy('m.id', 'ASC')
-            ->setMaxResults(10)
             ->getQuery()
             ->getResult()
         ;
     }
-    */
+
 
     /*
     public function findOneBySomeField($value): ?Meterage

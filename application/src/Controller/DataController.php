@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Service\Meterage\MeterageService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Serializer\SerializerInterface;
 use Twig\Environment;
@@ -61,11 +62,12 @@ class DataController extends AbstractController
      * @Route("/get-plot-data", name="get-plot-data")
      * @return Response
      */
-    public function plot(): Response
+    public function plot(
+        Request $request
+    ): Response
     {
-        $data = $this->service->createPlot();
-
-//        $jsonContent = $this->serializer->serialize($data, 'json');
+        $parameter = $request->query->get('parameter');
+        $data = $this->service->createPlot($parameter);
         $jsonContent = $this->serializer->serialize(
             $data, 'json');
 

@@ -25,16 +25,18 @@ class MeterageService
                 $meterage->getId(),
                 $meterage->getLat(), $meterage->getLong(), $meterage->getHeight(),
                 $meterage->getValue(), $meterage->getParameter(), $meterage->getStation(),
-                date_format($meterage->getDate(), 'd.m.Y'), $meterage->getLocation()
+                date_format($meterage->getDate(), 'd. m. Y'), $meterage->getLocation()
             );
         }
         
         return new MeterageTableDto($meteragesDtoList, new FooterDto('footer'));
     }
 
-    public function createPlot(): array
+    public function createPlot(
+        $parameter
+    ): array
     {
-        $meterages = $this->repository->findAll();
+        $meterages = $this->repository->findByFilter($parameter);
         $plotData = [];
         foreach ($meterages as $meterage) {
             $plotData['x'][] = $meterage->getStation();
