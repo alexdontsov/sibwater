@@ -20,12 +20,15 @@ class MeterageRepository extends ServiceEntityRepository
     }
 
     public function findByFilter(
-        $parameter
+        $parameter,
+        $location
     )
     {
         return $this->createQueryBuilder('m')
             ->andWhere('m.parameter = :parameter')
             ->setParameter('parameter', $parameter)
+            ->andWhere('m.location = :location')
+            ->setParameter('location', $location)
             ->orderBy('m.id', 'ASC')
             ->getQuery()
             ->getResult()

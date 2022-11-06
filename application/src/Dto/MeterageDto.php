@@ -27,9 +27,8 @@ class MeterageDto
         $this->date      = $date;
         $this->location  = $location;
 
-        $parameterUnit = explode(',', $parameter->getName());
-        $this->parameter = $parameterUnit[0];
-        $this->unit = $parameterUnit[1];
+        $this->parameter = $parameter->getName();
+        $this->unit = $parameter->getId();
     }
 
     /**

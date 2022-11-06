@@ -7,7 +7,6 @@
                     data-show-columns="true"
                     data-show-multi-sort="true"
                     data-filter-control="true"
-                    data-sort-priority='[{"sortName": "github.count.forks","sortOrder":"desc"},{"sortName":"github.count.stargazers","sortOrder":"desc"}]'
                     data-url="/get-table-data"
                     data-page-list="[10, 25, 50, 100, all]"
                     data-show-footer="true"
@@ -16,8 +15,10 @@
                 <thead>
                 <tr>
                     <th data-field="date" data-sortable="true" data-filter-control="datepicker">Дата</th>
-                    <th data-field="parameter" data-sortable="true" data-filter-control="select">Параметр</th>
-                    <th data-field="unit"></th>
+                    <th data-field="parameter" data-sortable="true" data-filter-control="select"
+                        data-filter-strict-search="true"
+                        data-filter-custom-search="customSearch"
+                        >Параметр</th>
                     <th data-field="value" data-sortable="true">Значение</th>
                     <th data-field="height" data-sortable="true">Горизонт, м</th>
                     <th data-field="station" data-filter-control="select">Станция</th>
@@ -28,9 +29,19 @@
             </table>
 
             <script>
-                // $(function() {
-                $('#table').bootstrapTable()
-                // })
+                var filterDefaults = {
+                    somekey: 'some string value',
+                    anotherkey: 'another value'
+                };
+
+                $('#table').bootstrapTable();
+
+                function customSearch(text, value, field, data) {
+
+                    return data.filter(function (row) {
+                        return value === row.parameter;
+                    });
+                }
             </script>
 
 

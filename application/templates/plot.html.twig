@@ -8,14 +8,16 @@
 
                     $( "#filter_button" ).click(function() {
                         let filterParameter = $( "#filter_parameter" ).val();
+                        let filterLocation = $( "#filter_location" ).val();
 
-                        getPlotData(filterParameter);
+                        getPlotData(filterParameter, filterLocation);
                     });
 
                     function getPlotData(
-                        filterParameter
+                        filterParameter,
+                        filterLocation
                     ) {
-                        $.get('/get-plot-data?parameter=' + filterParameter,
+                        $.get('/get-plot-data?parameter=' + filterParameter + '&location=' + filterLocation,
                             function(response) {
                                 console.log(response)
                                 dataX = response['x'];

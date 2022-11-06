@@ -33,15 +33,19 @@ class MeterageService
     }
 
     public function createPlot(
-        $parameter
+        $parameter,
+        $location
     ): array
     {
-        $meterages = $this->repository->findByFilter($parameter);
+        $meterages = $this->repository->findByFilter(
+            $parameter,
+            $location
+        );
+
         $plotData = [];
         foreach ($meterages as $meterage) {
             $plotData['x'][] = $meterage->getStation();
             $plotData['y'][] = $meterage->getValue();
-
         }
 
         return $plotData;

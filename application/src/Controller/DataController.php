@@ -67,7 +67,9 @@ class DataController extends AbstractController
     ): Response
     {
         $parameter = $request->query->get('parameter');
-        $data = $this->service->createPlot($parameter);
+        $location = $request->query->get('location');
+
+        $data = $this->service->createPlot($parameter, $location);
         $jsonContent = $this->serializer->serialize(
             $data, 'json');
 
