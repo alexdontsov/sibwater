@@ -11,6 +11,7 @@
                     data-page-list="[10, 25, 50, 100, all]"
                     data-show-footer="true"
                     data-pagination="true"
+                    data-locale="ru-RU"
             >
                 <thead>
                 <tr>
@@ -34,7 +35,11 @@
                     anotherkey: 'another value'
                 };
 
-                $('#table').bootstrapTable();
+                $('#table').bootstrapTable(
+                    {
+                        locale: 'ru-RU'
+                    }
+                );
 
                 function customSearch(text, value, field, data) {
 
