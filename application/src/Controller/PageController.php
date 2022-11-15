@@ -70,7 +70,7 @@ class PageController extends AbstractController
 	 */
 	public function data(): Response
 	{
-		return new Response($this->twig->render('pages/data.html.twig', []));
+		return new Response($this->twig->render('data.html.twig', []));
 	}
 
 	/**

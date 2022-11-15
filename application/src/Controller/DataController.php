@@ -34,7 +34,7 @@ class DataController extends AbstractController
     }
 
     /**
-     * @Route("/data-meters", name="/data-meters")
+     * @Route("/data-meters", name="data-meters")
      * @return Response
      * @throws LoaderError
      * @throws RuntimeError
@@ -42,7 +42,19 @@ class DataController extends AbstractController
      */
     public function index(): Response
     {
-        return new Response($this->twig->render('data.html.twig', []));
+        return new Response($this->twig->render('pages/sat_data.html.twig', []));
+    }
+
+    /**
+     * @Route("/data-sat", name="data-meters")
+     * @return Response
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
+     */
+    public function sat(): Response
+    {
+        return new Response($this->twig->render('pages/data.html.twig', []));
     }
 
     /**
