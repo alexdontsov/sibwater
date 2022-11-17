@@ -46,7 +46,7 @@ class DataController extends AbstractController
     }
 
     /**
-     * @Route("/data-sat", name="data-meters")
+     * @Route("/data-sat", name="data-sat")
      * @return Response
      * @throws LoaderError
      * @throws RuntimeError
