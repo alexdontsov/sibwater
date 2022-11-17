@@ -13,36 +13,174 @@
 
 <script>
 
-	let openStreet = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-	});
+
+    let openStreet = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
+        maxZoom: 18,
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+            'Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1
+    });
+
+    var esri = L.tileLayer('http://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        maxZoom: 18,
+        name: "Esri.WorldImagery",
+
+    });
+
+    // source: new ol.source.TileWMS({
+    // 	url: 'http://localhost:8980/geoserver/sibwater/wms',
+    // 	params: {'FORMAT': format,
+    // 		'VERSION': '1.1.1',
+    // 		tiled: true,
+    // 		"STYLES": '',
+    // 		"LAYERS": 'sibwater:sentinel-2-test1',
+    // 		"exceptions": 'application/vnd.ogc.se_inimage',
+    // 		tilesOrigin: 86.999468241 + "," + 69.299020638 2018/07/21 - 2017-08-24 - 23-07-2019 -
+    // 	}
+    // })
+
+    // var wmsLayer = L.tileLayer.wms('http://localhost:8980/geoserver/sibwater/wms', {
+    // 	layers: 'sibwater:sentinel-2-test1'
+    // });
+
+    var wmsLayer = L.tileLayer.wms('http://arcticgis.iwep.ru:8980/geoserver/public/wms', {
+        layers: 'public:tt',
+        format: 'image/png',
+        zIndex: 2,
+        transparent: true
+    });
+
+    var iot_atop = L.tileLayer.wms('http://arcticgis.iwep.ru:8980/geoserver/public/wms', {
+        layers: 'public:iot_atop',
+        format: 'image/png',
+        zIndex: 2,
+        transparent: true
+    });
+
 
     var mymap = L.map('map', {
-		center: [71.7661, 75.0251],
-            zoom: 12,
-        layers: [openStreet]
-	});
+        center: [71.7661, 75.0251],
+        zoom: 12,
+        layers: [openStreet, esri]
+    });
 
-	var baseMaps = {
-		"Open street map": openStreet,
-        };
+    var baseMaps = {
+        "Open street map": openStreet,
+        "ERSI": esri,
+    };
 
 
 
-	var cities = L.layerGroup();
-	L.marker([66.7697777777778, 68.9480555555556]).bindPopup('H - 0,3м <br> T - 16,6&#8451;<br> Цвет - 18').addTo(cities);
-	L.marker([66.7823888888889, 68.9604166666667]).bindPopup('H - 0,3м <br> T - 16,6&#8451;<br> Цвет - 18').addTo(cities);
-	L.marker([66.7804166666667, 68.9598055555556]).bindPopup('H - 0 <br> T - 16,7&#8451;<br> Цвет - 20<br> Хл - 400').addTo(cities);
-	L.marker([66.7775277777778, 68.9600277777778]).bindPopup('H - 0 <br> T - 16,7&#8451;<br> Цвет - 20<br> Хл - 400').addTo(cities);
-	L.marker([66.7757222222222, 68.9567777777778]).bindPopup('H - 0 <br> T - 16,8&#8451;<br> Цвет - 19<br> Хл - 250').addTo(cities);
-	L.marker([66.7719444444444, 68.9546111111111]).bindPopup('H - 0 <br> T - 16,7&#8451;<br> Цвет - 19<br> Хл - 250').addTo(cities);
-	L.marker([66.7834166666667, 68.9608055555556]).bindPopup('H - 0 <br> T - 16,7&#8451;<br> Цвет - 19<br> Хл - 250').addTo(cities);
-	L.marker([66.7814444444444, 68.8549444444444]).bindPopup('H - 0 <br> T - 16,7&#8451;<br> Цвет - 19<br> Хл - 250').addTo(cities);
+    var cities = L.layerGroup();
+    L.marker([66.7697777777778, 68.9480555555556]).bindPopup('H - 0,3м <br> T - 16,6&#8451;<br> Цвет - 18').addTo(cities);
+    L.marker([66.7823888888889, 68.9604166666667]).bindPopup('H - 0,3м <br> T - 16,6&#8451;<br> Цвет - 18').addTo(cities);
+    L.marker([66.7804166666667, 68.9598055555556]).bindPopup('H - 0 <br> T - 16,7&#8451;<br> Цвет - 20<br> Хл - 400').addTo(cities);
+    L.marker([66.7775277777778, 68.9600277777778]).bindPopup('H - 0 <br> T - 16,7&#8451;<br> Цвет - 20<br> Хл - 400').addTo(cities);
+    L.marker([66.7757222222222, 68.9567777777778]).bindPopup('H - 0 <br> T - 16,8&#8451;<br> Цвет - 19<br> Хл - 250').addTo(cities);
+    L.marker([66.7719444444444, 68.9546111111111]).bindPopup('H - 0 <br> T - 16,7&#8451;<br> Цвет - 19<br> Хл - 250').addTo(cities);
+    L.marker([66.7834166666667, 68.9608055555556]).bindPopup('H - 0 <br> T - 16,7&#8451;<br> Цвет - 19<br> Хл - 250').addTo(cities);
+    L.marker([66.7814444444444, 68.8549444444444]).bindPopup('H - 0 <br> T - 16,7&#8451;<br> Цвет - 19<br> Хл - 250').addTo(cities);
 
-	var overlayMaps = {
-		"Экспедиционные данные": cities,
-	};
+    var overlayMaps = {
+        "Экспедиционные данные": cities,
+        "Sentinel-2, Conc TSM": wmsLayer,
+        "Sentinel-2, IOT ATOP (21.08.2020)": iot_atop
+    };
 
-	L.control.layers(baseMaps, overlayMaps).addTo(mymap);
+    L.control.layers(baseMaps, overlayMaps).addTo(mymap);
+
+    setInterval(function () {
+        mymap.invalidateSize();
+    }, 100);
+
+
+    // $(document).ready(function () {
+    //
+    // 	var newParent = document.getElementById('custom-map-controls');
+    // 	var oldParent = document.getElementsByClassName("leaflet-top leaflet-right")
+    //
+    // 	while (oldParent[0].childNodes.length > 0) {
+    // 		newParent.appendChild(oldParent[0].childNodes[0]);
+    // 	}
+    // });
+
+    // use jQuery to listen for checkbox change event
+    // $('div#layercontrol input[type="checkbox"]').on('change', function() {
+    // 	var checkbox = $(this);
+    // 	var layer = checkbox.data().layer;
+    //
+    // 	// toggle the layer
+    // 	if (checkbox.is('checked')) {
+    // 		mymap.addLayer(layer);
+    // 	} else {
+    // 		mymap.removeLayer(layer);
+    // 	}
+    //
+    // })
+    var populationLegend = L.control({position: 'bottomright'});
+    var populationChangeLegend = L.control({position: 'bottomright'});
+
+    populationLegend.onAdd = function (mymap) {
+        var div = L.DomUtil.create('div', 'info legend');
+        div.innerHTML +=
+            '<img src="legend.png" alt="legend" width="134" height="147">';
+        return div;
+    };
+
+    populationChangeLegend.onAdd = function (mymap) {
+        var div = L.DomUtil.create('div', 'info legend');
+        div.innerHTML +=
+            // '<img src="change_legend.png" alt="legend" width="134" height="147">';
+            '<h1>xcxcxcxc</h1>';
+        return div;
+    };
+
+    // Add this one (only) for now, as the Population layer is on by default
+    populationLegend.addTo(mymap);
+
+    mymap.on('overlayadd', function (eventLayer) {
+        // Switch to the Population legend...
+        if (eventLayer.name === 'wmsLayer') {
+            this.removeControl(populationChangeLegend);
+            populationLegend.addTo(this);
+        } else { // Or switch to the Population Change legend...
+            this.removeControl(populationLegend);
+            populationChangeLegend.addTo(this);
+        }
+    });
+
+//	let openStreet = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+//	});
+//
+//    var mymap = L.map('map', {
+//		center: [71.7661, 75.0251],
+//            zoom: 12,
+//        layers: [openStreet]
+//	});
+//
+//	var baseMaps = {
+//		"Open street map": openStreet,
+//        };
+//
+//
+//
+//	var cities = L.layerGroup();
+//	L.marker([66.7697777777778, 68.9480555555556]).bindPopup('H - 0,3м <br> T - 16,6&#8451;<br> Цвет - 18').addTo(cities);
+//	L.marker([66.7823888888889, 68.9604166666667]).bindPopup('H - 0,3м <br> T - 16,6&#8451;<br> Цвет - 18').addTo(cities);
+//	L.marker([66.7804166666667, 68.9598055555556]).bindPopup('H - 0 <br> T - 16,7&#8451;<br> Цвет - 20<br> Хл - 400').addTo(cities);
+//	L.marker([66.7775277777778, 68.9600277777778]).bindPopup('H - 0 <br> T - 16,7&#8451;<br> Цвет - 20<br> Хл - 400').addTo(cities);
+//	L.marker([66.7757222222222, 68.9567777777778]).bindPopup('H - 0 <br> T - 16,8&#8451;<br> Цвет - 19<br> Хл - 250').addTo(cities);
+//	L.marker([66.7719444444444, 68.9546111111111]).bindPopup('H - 0 <br> T - 16,7&#8451;<br> Цвет - 19<br> Хл - 250').addTo(cities);
+//	L.marker([66.7834166666667, 68.9608055555556]).bindPopup('H - 0 <br> T - 16,7&#8451;<br> Цвет - 19<br> Хл - 250').addTo(cities);
+//	L.marker([66.7814444444444, 68.8549444444444]).bindPopup('H - 0 <br> T - 16,7&#8451;<br> Цвет - 19<br> Хл - 250').addTo(cities);
+//
+//	var overlayMaps = {
+//		"Экспедиционные данные": cities,
+//	};
+//
+//	L.control.layers(baseMaps, overlayMaps).addTo(mymap);
 
 
 </script>
