@@ -4,10 +4,6 @@
         <div class="row">
             <div class="service-heading col-12 col-lg-12 text-start float-end light-300">
                 <div id="map" style="width: 100%; height: 600px;margin:0 auto;"></div>
-{#                <div id="custom-map-controls"></div>#}
-{#                <div id="layercontrol">#}
-{#                    <label><input type="checkbox" data-layer="cities">Cities</label>#}
-{#                </div>#}
             </div>
         </div>
     </div>
@@ -15,7 +11,6 @@
 </section>
 
 <script>
-
 	let openStreet = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
 		maxZoom: 18,
 		attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
@@ -47,8 +42,8 @@
 	// 	layers: 'sibwater:sentinel-2-test1'
 	// });
 
-	var wmsLayer = L.tileLayer.wms('http://arcticgis.iwep.ru:8980/geoserver/public/wms', {
-		layers: 'public:tt',
+	var wmsLayer = L.tileLayer.wms('http://localhost:8080/geoserver/ne/wms', {
+		layers: 'ne:meteor_2023_10_04',
 		format: 'image/png',
 		zIndex: 2,
 		transparent: true
@@ -61,19 +56,17 @@
 		transparent: true
 	});
 
-
-    var mymap = L.map('map', {
-		center: [71.7661, 75.0251],
-            zoom: 8,
+    let mymap = L.map('map', {
+        fullscreenControl: true,
+        center: [71.7661, 75.0251],
+        zoom: 8,
         layers: [openStreet, esri]
 	});
 
 	var baseMaps = {
 		"Open street map": openStreet,
 		"ERSI": esri,
-        };
-
-
+    };
 
 	var cities = L.layerGroup();
 	L.marker([66.7697777777778, 68.9480555555556]).bindPopup('H - 0,3м <br> T - 16,6&#8451;<br> Цвет - 18').addTo(cities);
@@ -87,7 +80,7 @@
 
 	var overlayMaps = {
 		"Экспедиционные данные": cities,
-		"Sentinel-2, Conc TSM": wmsLayer,
+		"Метеор-2М, 04.10.2023": wmsLayer,
 		"Sentinel-2, IOT ATOP (21.08.2020)": iot_atop
 	};
 
@@ -118,36 +111,36 @@
 	// 	}
     //
 	// })
-	var populationLegend = L.control({position: 'bottomright'});
-	var populationChangeLegend = L.control({position: 'bottomright'});
-
-	populationLegend.onAdd = function (mymap) {
-		var div = L.DomUtil.create('div', 'info legend');
-		div.innerHTML +=
-			'<img src="legend.png" alt="legend" width="134" height="147">';
-		return div;
-	};
-
-	populationChangeLegend.onAdd = function (mymap) {
-		var div = L.DomUtil.create('div', 'info legend');
-		div.innerHTML +=
-			// '<img src="change_legend.png" alt="legend" width="134" height="147">';
-			'<h1>xcxcxcxc</h1>';
-		return div;
-	};
+	// var populationLegend = L.control({position: 'bottomright'});
+	// var populationChangeLegend = L.control({position: 'bottomright'});
+    //
+	// populationLegend.onAdd = function (mymap) {
+	// 	var div = L.DomUtil.create('div', 'info legend');
+	// 	div.innerHTML +=
+	// 		'<img src="legend.png" alt="legend" width="134" height="147">';
+	// 	return div;
+	// };
+    //
+	// populationChangeLegend.onAdd = function (mymap) {
+	// 	var div = L.DomUtil.create('div', 'info legend');
+	// 	div.innerHTML +=
+	// 		// '<img src="change_legend.png" alt="legend" width="134" height="147">';
+	// 		'<h1>xcxcxcxc</h1>';
+	// 	return div;
+	// };
 
 	// Add this one (only) for now, as the Population layer is on by default
-	populationLegend.addTo(mymap);
+	// populationLegend.addTo(mymap);
 
-	mymap.on('overlayadd', function (eventLayer) {
-		// Switch to the Population legend...
-		if (eventLayer.name === 'wmsLayer') {
-			this.removeControl(populationChangeLegend);
-			populationLegend.addTo(this);
-		} else { // Or switch to the Population Change legend...
-			this.removeControl(populationLegend);
-			populationChangeLegend.addTo(this);
-		}
-	});
+	// mymap.on('overlayadd', function (eventLayer) {
+	// 	// Switch to the Population legend...
+	// 	if (eventLayer.name === 'wmsLayer') {
+	// 		this.removeControl(populationChangeLegend);
+	// 		populationLegend.addTo(this);
+	// 	} else { // Or switch to the Population Change legend...
+	// 		this.removeControl(populationLegend);
+	// 		populationChangeLegend.addTo(this);
+	// 	}
+	// });
 
 </script>
