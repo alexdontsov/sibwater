@@ -32,27 +32,27 @@ services:
       POSTGRES_PASSWORD: main
       POSTGRES_DB: main
     ports: [5432]
-  redis:
-    image: redis:5-alpine
-    ports: [6379]
-  rabbitmq:
-    image: rabbitmq:3.7-management
-    ports: [5672, 15672]
-  geoserver:
-    image: geosolutionsit/geoserver
-    env_file: .env
-    ports:
-      - 8980:8080
-    volumes:
-#      - ./logs:${GEOSERVER_LOG_DIR}
-#      - ./datadir:${GEOSERVER_DATA_DIR}
-#      - ./gwc_config:${GEOWEBCACHE_CONFIG_DIR}
-#      - ./gwc:${GEOWEBCACHE_CACHE_DIR}
-#      - ./netcfd:${NETCDF_DATA_DIR}
-#      - ./grib_cache:${GRIB_CACHE_DIR}
-      - ./geoserver/logs:${GEOSERVER_LOG_DIR}
-      - ./geoserver/datadir:${GEOSERVER_DATA_DIR}
-      - ./geoserver/gwc_config:${GEOWEBCACHE_CONFIG_DIR}
-      - ./geoserver/gwc:${GEOWEBCACHE_CACHE_DIR}
-      - ./geoserver/netcfd:${NETCDF_DATA_DIR}
-      - ./geoserver/grib_cache:${GRIB_CACHE_DIR}
+#  redis:
+#    image: redis:5-alpine
+#    ports: [6379]
+#  rabbitmq:
+#    image: rabbitmq:3.7-management
+#    ports: [5672, 15672]
+#  geoserver:
+#    image: geosolutionsit/geoserver
+#    env_file: .env
+#    ports:
+#      - 8980:8080
+#    volumes:
+##      - ./logs:${GEOSERVER_LOG_DIR}
+##      - ./datadir:${GEOSERVER_DATA_DIR}
+##      - ./gwc_config:${GEOWEBCACHE_CONFIG_DIR}
+##      - ./gwc:${GEOWEBCACHE_CACHE_DIR}
+##      - ./netcfd:${NETCDF_DATA_DIR}
+##      - ./grib_cache:${GRIB_CACHE_DIR}
+#      - ./geoserver/logs:${GEOSERVER_LOG_DIR}
+#      - ./geoserver/datadir:${GEOSERVER_DATA_DIR}
+#      - ./geoserver/gwc_config:${GEOWEBCACHE_CONFIG_DIR}
+#      - ./geoserver/gwc:${GEOWEBCACHE_CACHE_DIR}
+#      - ./geoserver/netcfd:${NETCDF_DATA_DIR}
+#      - ./geoserver/grib_cache:${GRIB_CACHE_DIR}

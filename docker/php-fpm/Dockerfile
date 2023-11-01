@@ -1,28 +1,33 @@
-FROM php:7.4-fpm
+FROM php:8.2-fpm
 
-RUN apt-get update && apt-get install -y curl zlib1g-dev libzip-dev libpng-dev libcurl4-openssl-dev libonig-dev \
-    autoconf g++ make zip unzip git libpq-dev
+RUN apt-get update; \
+    apt-get upgrade -y; \
+    apt-get install -y curl \
+            libssl-dev \
+            pkg-config \
+            libzip-dev \
+            unzip \
+            git; \
+    rm -rf /var/lib/apt/lists/*
 
-RUN pecl install xdebug \
-    && docker-php-ext-enable xdebug
+#RUN #docker-php-ext-install pdo_pgsql; \
+#    docker-php-ext-install gd; \
+#    php -r 'var_dump(gd_info());' \
 
-RUN pecl install redis \
-    && docker-php-ext-enable redis \
-    && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
-    && docker-php-ext-install pdo_pgsql gd zip json curl bcmath mbstring
+#RUN pecl install xdebug \
+#    && docker-php-ext-enable xdebug
 
-RUN mv $PHP_INI_DIR/php.ini-development $PHP_INI_DIR/php.ini
-
-ENV COMPOSER_ALLOW_SUPERUSER 1
-
-#install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-
-# Clear cache
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
 
+RUN adduser www-data www-data
+RUN usermod -u 1000 www-data
+
+COPY ./application /var/www/html
 WORKDIR /var/www/html
+
 RUN composer install
+RUN chown www-data:www-data -R var/
 # Expose port 9000 and start php-fpm server
 EXPOSE 9000
 CMD ["php-fpm"]
