@@ -26,6 +26,21 @@ p, a {font-weight: 400;}
   font-family: 'Open Sans', sans-serif !important;
   font-weight: 300;
 }
+
+html {
+  position: relative;
+  min-height: 100%;
+  padding-bottom:160px;
+}
+body {
+  margin-bottom: 160px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
 .regular-400 {
   font-family: 'Open Sans', sans-serif !important;
   font-weight: 400;
