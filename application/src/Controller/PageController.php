@@ -209,4 +209,16 @@ class PageController extends AbstractController
     {
         return new Response($this->twig->render('pages/index.html.twig', []));
     }
+
+    /**
+     * @Route("data-report-2024", name="data-report-2024")
+     * @return Response
+     * @throws LoaderError
+     * @throws RuntimeError
+     * @throws SyntaxError
+     */
+    public function dataReport2024(): Response
+    {
+        return new Response($this->twig->render('pages/data-report-2024.html.twig', []));
+    }
 }

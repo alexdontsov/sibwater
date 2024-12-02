@@ -1,0 +1,132 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+    <section class="service-wrapper py-3">
+        <div class="container-fluid pb-3">
+            <div class="row">
+                <div class="service-heading col-12 col-lg-12 text-start float-end light-300">
+                    <div class="container" style="text-align: center; padding-top: 30px">
+                        <table class="table table-bordered">
+                            <thead>
+                            <tr>
+                                <th rowspan="2">
+                                    Река
+                                </th>
+                                <th rowspan="2">
+                                    Створ
+                                </th>
+                                <th rowspan="2">
+                                    Месяц
+                                </th>
+                                <th rowspan="2">
+                                    Расход
+                                    воды, м3/с
+                                </th>
+
+                                <th colspan="4">
+                                    Биосток и органика
+                                </th>
+                           </tr>
+
+                            <tr>
+                                <th>
+                                    Фитопланктон, г/с
+                                </th>
+                                <th>
+                                    Зоопланктон,  г/с
+                                </th>
+                                <th>
+                                    Хлорофилл, г/с
+                                </th>
+                                <th>
+                                    Органическое вещество (ОРОВ), г/с
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td rowspan="2">Малая Обь</td><td rowspan="2">Азовы</td><td>июнь</td>
+                                <td>11218</td>
+                                <td>22098</td>
+                                <td>27931</td>
+                                <td>28</td>
+                                <td>676409</td>
+                            </tr>
+                            <tr>
+                                <td>сентябрь</td>
+                                <td>2634</td>
+                                <td>16595</td>
+                                <td>922</td>
+                                <td>14</td>
+                                <td>190558</td>
+                            </tr>
+
+                            <tr>
+                                <td rowspan="2">Большая Обь</td><td rowspan="2">Казым-Мыс</td><td>июнь</td>
+                                <td>24278</td>
+                                <td>42486</td>
+                                <td>130615</td>
+                                <td>63</td>
+                                <td>1311972</td>
+                            </tr>
+                            <tr>
+                                <td>сентябрь</td>
+                                <td>8325</td>
+                                <td>50281</td>
+                                <td>3080</td>
+                                <td>51</td>
+                                <td>550256</td>
+                            </tr>
+
+
+                            <tr>
+                                <td rowspan="2">Обь</td><td rowspan="2">Салемал</td><td>июнь</td>
+                                <td>39913</td>
+                                <td>36320</td>
+                                <td>137698</td>
+                                <td>120</td>
+                                <td>2355243</td>
+                            </tr>
+                            <tr>
+                                <td>сентябрь</td>
+                                <td>19828</td>
+                                <td>113614</td>
+                                <td>9478</td>
+                                <td>89</td>
+                                <td>1345726</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+
+                        <div id="map" style="width: 100%; height: 400px;"></div>
+
+                        <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+                                integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+                                crossorigin=""></script>
+
+                        <script>
+
+                            var map = L.map('map').setView([64.6556, 65.6343], 7);
+
+                            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+
+                                maxZoom: 18
+                            }).addTo(map);
+
+                            var cities = L.layerGroup();
+                            L.marker([64.87594, 65.19091]).bindPopup('<b>Малая Обь </b><br />с. Азовы').addTo(cities);
+                            L.marker([64.6561, 65.6318]).bindPopup('<b>Большая Обь </b><br />с. Казым-Мыс').addTo(cities);
+                            L.marker([66.78313, 68.96575]).bindPopup('<b>Обь </b><br />с. Салемал').addTo(cities);
+
+                            cities.addTo(map)
+
+                        </script>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+{% endblock %}
